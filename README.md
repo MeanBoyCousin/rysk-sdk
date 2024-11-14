@@ -42,12 +42,12 @@ const Client = new RyskSDK(MY_PRIVATE_KEY)
 
 The client can also accept a configuration object as the second parameter.
 
-| Key          | Type                     | Default                        | Description                                                               |
-|--------------|--------------------------|--------------------------------|---------------------------------------------------------------------------|
-| debug        | `boolean`                | `false`                          | Used to enable debug mode when running the client for additional logging. |
-| environment  | `'testnet' \| 'mainnet'` | `'testnet'`                      | Specify the environment you wish to trade in.                             |
-| rpc          | `string`                 | `Blast RPC based on environment` | Specify a custom RPC url to used.                                         |
-| subAccountId | `number`                 | `1`                              | Specify a sub-account ID to use. This can be from 1-255.                  |
+| Key          | Type                     | Default                           | Description                                                               |
+|--------------|--------------------------|-----------------------------------|---------------------------------------------------------------------------|
+| debug        | `boolean`                | `false`                             | Used to enable debug mode when running the client for additional logging. |
+| environment  | `'testnet' \| 'mainnet'` | `'testnet'`                         | Specify the environment you wish to trade in.                             |
+| rpc          | `string`                 | `Arbitrum RPC based on environment` | Specify a custom RPC url to used.                                         |
+| subAccountId | `number`                 | `1`                                 | Specify a sub-account ID to use. This can be from 1-255.                  |
 
 ```ts
 import RyskSDK from 'rysk-sdk'

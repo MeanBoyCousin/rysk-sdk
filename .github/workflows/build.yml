@@ -36,11 +36,16 @@ jobs:
           cache: 'yarn'
           node-version: ${{ matrix.version }}
 
+      - name: Clean package.json
+        run: |
+          echo "$(jq 'del(.devDependencies)' package.json)" > package.json
+        shell: bash
+
       - name: Install dependencies
-        run: yarn install --prod --frozen-lockfile --ignore-scripts
+        run: yarn install --frozen-lockfile --ignore-scripts
 
       - name: Install build tools
-        run: yarn add tsup -D --prod --frozen-lockfile --ignore-scripts
+        run: yarn add tsup -D --frozen-lockfile --ignore-scripts
 
       - name: Build package
         run: yarn build

@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         version:
-          - 14.0.0
+          - 14.21.3
           - 16.0.0
           - 18.0.0
           - 20.0.0
@@ -36,8 +36,11 @@ jobs:
           cache: 'yarn'
           node-version: ${{ matrix.version }}
 
-      - name: Yarn install
-        run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: yarn install --prod --frozen-lockfile --ignore-scripts
+
+      - name: Install build tools
+        run: yarn add tsup -D --prod --frozen-lockfile --ignore-scripts
 
       - name: Build package
         run: yarn build
